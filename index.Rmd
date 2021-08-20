@@ -4,6 +4,7 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
@@ -14,11 +15,19 @@ library(ggridges)
 
 df <- penguins
 
+df %>% count(species)
+
 ```
 
 # Summary
 
-## Column {data-width=650}
+## Column {.sidebar}
+
+```{r}
+selectInput("v_species", label = "Species", choices = c("All", "Adelie", ""))
+```
+
+## Column {data-width=550}
 
 ### Chart A
 
