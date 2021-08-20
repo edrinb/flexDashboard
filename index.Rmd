@@ -1,10 +1,9 @@
 ---
 title: "Flex Dashboard Playground"
-output: 
+output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
-runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
@@ -20,12 +19,6 @@ df %>% count(species)
 ```
 
 # Summary
-
-## Column {.sidebar}
-
-```{r}
-selectInput("v_species", label = "Species", choices = c("All", "Adelie", ""))
-```
 
 ## Column {data-width=550}
 
